@@ -21,15 +21,28 @@ const experiences = [
 
 export default function ExperienceTimeline() {
   return (
-    <section className="py-24 px-8 md:px-24 relative z-10 max-w-5xl mx-auto">
-      <div className="mb-20">
+    <section id="experience" className="py-24 px-8 md:px-24 relative z-10 max-w-5xl mx-auto">
+      <motion.div 
+        className="mb-20"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
+      >
         <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white">Experience</h2>
         <p className="text-[var(--accent)] mt-2 font-mono">cd /var/log/career</p>
-      </div>
+      </motion.div>
 
       <div className="relative border-l border-white/10 ml-4 md:ml-8 space-y-16 pb-12">
         {experiences.map((exp, index) => (
-          <div key={exp.id} className="relative pl-8 md:pl-16 group">
+          <motion.div 
+            key={exp.id} 
+            className="relative pl-8 md:pl-16 group"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: index * 0.2, ease: [0.25, 0.4, 0.25, 1] }}
+          >
             {/* Timeline Node */}
             <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-[#050505] border-2 border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:shadow-[0_0_15px_rgba(204,255,0,0.6)] transition-all duration-300" />
             
@@ -53,7 +66,7 @@ export default function ExperienceTimeline() {
                 </span>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

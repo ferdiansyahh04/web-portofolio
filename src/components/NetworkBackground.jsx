@@ -1,11 +1,11 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useCallback } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
 function ParticleNetwork() {
   const ref = useRef();
-  const count = 500;
+  const count = 300;
   
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3);
@@ -16,6 +16,7 @@ function ParticleNetwork() {
   }, [count]);
 
   useFrame((state) => {
+    if (!ref.current) return;
     const t = state.clock.elapsedTime;
     ref.current.rotation.y = t * 0.05;
     
@@ -42,10 +43,31 @@ function ParticleNetwork() {
 }
 
 export default function NetworkBackground() {
+  const handleCreated = useCallback((state) => {
+    const canvas = state.gl.domElement;
+    canvas.addEventListener('webglcontextlost', (e) => {
+      e.preventDefault();
+      console.warn('WebGL context lost - preventing crash');
+    });
+    canvas.addEventListener('webglcontextrestored', () => {
+      console.log('WebGL context restored');
+    });
+  }, []);
+
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none opacity-80">
-      <Canvas camera={{ position: [0, 0, 12], fov: 60 }}>
-        <color attach="background" args={['#0a0a0a']} />
+    <div className="fixed inset-0 z-0 pointer-events-none opacity-80">
+      <Canvas
+        camera={{ position: [0, 0, 12], fov: 60 }}
+        onCreated={handleCreated}
+        gl={{ 
+          antialias: false, 
+          alpha: true,
+          powerPreference: 'low-power',
+          failIfMajorPerformanceCaveat: false 
+        }}
+        frameloop="always"
+        style={{ background: 'transparent' }}
+      >
         <fog attach="fog" args={['#0a0a0a', 8, 25]} />
         <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
           <ParticleNetwork />
