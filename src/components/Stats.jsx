@@ -42,7 +42,7 @@ export default function Stats() {
       <StatItem label="Uptime" value="99" suffix=".9%" delay={0} />
       <StatItem label="Servers Managed" value="50" suffix="+" delay={0.1} />
       <StatItem label="Projects Done" value="12" suffix="+" delay={0.2} />
-      <StatItem label="Years Exp" value="3" suffix="+" delay={0.3} />
+      <StatItem label="Years Exp" value="6" suffix="+" delay={0.3} />
     </div>
   );
 }

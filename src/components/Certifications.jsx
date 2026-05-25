@@ -3,31 +3,44 @@ import { Award, GraduationCap, Calendar, MapPin } from 'lucide-react';
 
 const certifications = [
   {
-    title: "MikroTik Certified Network Associate (MTCNA)",
-    issuer: "MikroTik",
-    date: "2023",
+    title: "Mikrotik (OSPF, VLAN, VPN/IPsec, Failover, Load Balancing)",
+    issuer: "Mikrotik",
+    date: "Production Experience",
     icon: <Award className="w-6 h-6 text-[var(--accent)]" />
   },
   {
-    title: "Cisco Certified Network Associate (CCNA)",
-    issuer: "Cisco",
-    date: "2022",
+    title: "Network Monitoring (Zabbix, LibreNMS, MRTG, Cacti)",
+    issuer: "Multi-vendor",
+    date: "Production Experience",
     icon: <Award className="w-6 h-6 text-[var(--accent)]" />
   },
   {
-    title: "Google IT Support Professional",
-    issuer: "Google",
-    date: "2021",
+    title: "Switch Configuration (Cisco, HP, Aruba, Alcatel)",
+    issuer: "Multi-vendor",
+    date: "Production Experience",
+    icon: <Award className="w-6 h-6 text-[var(--accent)]" />
+  },
+  {
+    title: "Network Security — Fortigate Firewall",
+    issuer: "Fortinet",
+    date: "Production Experience",
     icon: <Award className="w-6 h-6 text-[var(--accent)]" />
   }
 ];
 
 const education = [
   {
+    degree: "Bachelor's Degree (S1) — Informatics Engineering",
+    school: "Indraprasta PGRI University",
+    period: "2023 - Present",
+    location: "Jakarta, Indonesia",
+    icon: <GraduationCap className="w-6 h-6 text-[var(--accent-alt)]" />
+  },
+  {
     degree: "Computer & Network Engineering",
-    school: "Vocational High School",
-    period: "2018 - 2021",
-    location: "Indonesia",
+    school: "Taruna Abdi Bangsa Vocational High School",
+    period: "2015 - 2018",
+    location: "Kebumen, Central Java",
     icon: <GraduationCap className="w-6 h-6 text-[var(--accent-alt)]" />
   }
 ];
@@ -55,7 +68,7 @@ export default function Certifications() {
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <h2 className="text-4xl font-bold tracking-tighter text-white mb-2 uppercase italic">Certifications</h2>
+            <h2 className="text-4xl font-bold tracking-tighter text-white mb-2 uppercase italic">Specializations</h2>
             <div className="h-1 w-20 bg-[var(--accent)]" />
           </motion.div>
 

@@ -3,19 +3,43 @@ import { motion } from 'framer-motion';
 const experiences = [
   {
     id: 1,
-    role: "System & Network Administrator",
-    company: "Botnix",
-    period: "2023 - Present",
-    description: "Mengelola infrastruktur jaringan inti, orkestrasi server Proxmox, dan implementasi keamanan tingkat lanjut untuk menjamin uptime 99.9%.",
-    tech: ["Proxmox", "Mikrotik", "VLAN", "Linux", "Firewall"]
+    role: "IT Network Operation Center (NOC)",
+    company: "Samudra Kilat Indonesia",
+    period: "Feb 2022 - Present",
+    description: "Memonitor performa jaringan dan sistem produksi 24/7, menangani VPN tunnel, failover, load balancing, OSPF, VLAN, dan firewall. Diagnosa isu database, mail server, serta IP PBX/VoIP, dan eskalasi insiden kritis berdasarkan prioritas SLA.",
+    tech: ["Mikrotik", "OSPF", "VLAN", "Linux", "Fortigate", "VoIP"]
   },
   {
     id: 2,
-    role: "System & Network Engineer",
-    company: "Zeuss",
-    period: "2021 - Present",
-    description: "Bertanggung jawab atas arsitektur jaringan operasional logistik, pemeliharaan server lokal, dan troubleshooting hardware/software lintas cabang.",
-    tech: ["Cisco", "Linux Server", "Virtualization", "Fortigate Firewall", "Mikrotik"]
+    role: "Network & System Administrator (Remote)",
+    company: "Botnix",
+    period: "Dec 2020 - Present",
+    description: "Mengelola dan memelihara Virtual Private Server (VPS), Proxmox VE, dan Proxmox Backup Server. Menangani VPN tunnel, static routing, isu database produksi, serta maintenance website (SSL, DNS, hosting accessibility).",
+    tech: ["Proxmox VE", "VPS", "Linux", "VPN", "cPanel", "NGINX"]
+  },
+  {
+    id: 3,
+    role: "IT Network Operation Center (NOC)",
+    company: "Pemuda Berkarya Manunggal",
+    period: "Dec 2020 - Feb 2022",
+    description: "Troubleshoot isu jaringan dan sistem, konfigurasi router/switch dan wireless radio, menangani VPN tunnel, failover, load balancing, dan firewall. Maintenance dasar PABX/IP PBX dan monitoring traffic jaringan.",
+    tech: ["Mikrotik", "Cisco", "VPN", "PABX", "Firewall"]
+  },
+  {
+    id: 4,
+    role: "IT Helpdesk",
+    company: "Pemuda Berkarya Manunggal",
+    period: "Sep 2019 - Dec 2020",
+    description: "First-level technical support via ticketing dan komunikasi langsung. Diagnosa isu jaringan dan sistem dasar, monitoring performa downstream/upstream, eskalasi ke tim NOC/engineering bila diperlukan.",
+    tech: ["Ticketing", "Network Monitoring", "Troubleshooting"]
+  },
+  {
+    id: 5,
+    role: "IT Helpdesk",
+    company: "Anugrah Karunia Perkasa Abadi",
+    period: "Apr 2019 - Aug 2019",
+    description: "Memberikan technical support level pertama untuk klien, log dan tracking keluhan teknis, serta membantu network monitoring dan basic troubleshooting.",
+    tech: ["Helpdesk", "Network Monitoring"]
   }
 ];
 

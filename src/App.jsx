@@ -116,7 +116,12 @@ function App() {
             <MagneticButton 
               className="px-6 md:px-8 py-3 md:py-4 bg-white/5 border border-[#ccff00]/30 font-bold rounded-full hover:bg-[#ccff00]/10 transition-colors text-[#ccff00] flex items-center gap-2 text-sm md:text-base"
               onClick={() => {
-                alert('CV belum tersedia. Silakan tambahkan file CV ke folder public/cv.pdf');
+                const link = document.createElement('a');
+                link.href = '/cv.pdf';
+                link.download = 'Rizky-Ferdiansyah-CV.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
               }}
             >
               <Download className="w-4 md:w-5 h-4 md:h-5" /> CV
@@ -147,7 +152,7 @@ function App() {
           <div className="w-full">
             <p className="text-[#00e5ff] font-mono mb-4 text-xl">Let's build something epic.</p>
             <a 
-              href="mailto:rizkyferdiansyah04@gmail.com"
+              href="mailto:ferdiansyahh670@gmail.com"
               className="block text-[12vw] leading-[0.8] font-black tracking-tighter text-white hover:text-[#ccff00] transition-colors duration-500 cursor-pointer mb-8 no-underline"
             >
               LET'S TALK.
@@ -165,12 +170,12 @@ function App() {
                 GitHub
               </MagneticButton>
             </a>
-            <a href="https://linkedin.com/in/rizkyferdiansyah" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/rizky-ferdiansyah/" target="_blank" rel="noopener noreferrer">
               <MagneticButton className="px-6 py-3 bg-white/5 rounded-full hover:bg-[#ccff00] hover:text-black transition-colors font-bold text-sm md:text-base text-white">
                 LinkedIn
               </MagneticButton>
             </a>
-            <a href="mailto:rizkyferdiansyah04@gmail.com">
+            <a href="mailto:ferdiansyahh670@gmail.com">
               <MagneticButton className="px-6 py-3 bg-[#ccff00] text-black rounded-full hover:bg-white transition-colors font-bold text-sm md:text-base">
                 Email Me
               </MagneticButton>

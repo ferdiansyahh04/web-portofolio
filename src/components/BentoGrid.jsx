@@ -4,10 +4,10 @@ import { useEffect, useState, useRef } from 'react';
 
 const TechGrid = () => {
   const categories = [
-    { name: "Infrastructure", icon: <Server className="w-5 h-5" />, items: ["Proxmox", "VLAN", "Nginx"] },
-    { name: "Networking", icon: <Shield className="w-5 h-5" />, items: ["Mikrotik", "Cisco", "Firewall"] },
-    { name: "Development", icon: <Code className="w-5 h-5" />, items: ["React", "Node.js", "Python"] },
-    { name: "Cloud & Dev", icon: <Database className="w-5 h-5" />, items: ["Docker", "Git", "AWS"] },
+    { name: "Infrastructure", icon: <Server className="w-5 h-5" />, items: ["Proxmox VE", "Linux", "NGINX"] },
+    { name: "Networking", icon: <Shield className="w-5 h-5" />, items: ["Mikrotik", "Cisco", "Fortigate"] },
+    { name: "Monitoring", icon: <Cpu className="w-5 h-5" />, items: ["Zabbix", "LibreNMS", "Cacti"] },
+    { name: "Databases", icon: <Database className="w-5 h-5" />, items: ["MySQL", "MariaDB", "MongoDB"] },
   ];
 
   return (
@@ -59,10 +59,10 @@ const InteractiveTerminal = () => {
           output = 'Rizky Ferdiansyah — System & Network Administrator turning Software Engineer. Specializing in high-availability infrastructure and interactive web apps.';
           break;
         case 'skills':
-          output = 'Linux [██████████] 95%\nNetworking [████████░░] 85%\nReact [████████░░] 80%\nDocker [███████░░░] 75%';
+          output = 'Linux [██████████] 95%\nNetworking [█████████░] 90%\nVirtualization [████████░░] 85%\nDatabases [███████░░░] 70%';
           break;
         case 'contact':
-          output = 'Email: rizkyferdiansyah04@gmail.com\nLinkedIn: in/rizkyferdiansyah';
+          output = 'Email: ferdiansyahh670@gmail.com\nLinkedIn: in/rizky-ferdiansyah\nGitHub: github.com/ferdiansyahh04\nLocation: Jakarta, Indonesia';
           break;
         case 'date':
           output = new Date().toString();

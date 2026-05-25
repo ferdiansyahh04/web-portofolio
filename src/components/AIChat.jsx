@@ -72,7 +72,7 @@ export default function AIChat() {
         {
           role: 'assistant',
           content:
-            'Maaf, lagi ada gangguan koneksi ke server AI. Coba lagi sebentar ya, atau langsung email Rizky di rizkyferdiansyah04@gmail.com 🙏',
+            'Maaf, lagi ada gangguan koneksi ke server AI. Coba lagi sebentar ya, atau langsung email Rizky di ferdiansyahh670@gmail.com 🙏',
         },
       ]);
     } finally {

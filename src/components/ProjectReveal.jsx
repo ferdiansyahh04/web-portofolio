@@ -15,20 +15,20 @@ const projects = [
   {
     id: 2,
     title: 'Sport Booking',
-    role: 'Fullstack Developer',
-    tech: 'React, Tailwind, Express',
-    description: 'A comprehensive booking system for sports facilities with real-time availability and automated payment confirmation.',
-    link: 'https://github.com/ferdiansyahh04',
+    role: 'Java Developer',
+    tech: 'Java Swing, MySQL, JDBC, NetBeans',
+    description: 'A Java Swing desktop reservation system for futsal, basketball, and badminton courts. Features SHA-256 login, role-based access (Admin & Karyawan), automatic schedule-conflict validation, payment status tracking, and four reports for revenue, customers, and court usage.',
+    link: 'https://github.com/ferdiansyahh04/booking-lapangan',
     image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop',
   },
   {
     id: 3,
-    title: 'Proxmox Clustering',
-    role: 'Network Administrator',
-    tech: 'Proxmox VE, VLAN, Mikrotik',
-    description: 'Designing high-availability virtualization clusters with Proxmox VE and secure VLAN isolation.',
-    link: 'https://github.com/ferdiansyahh04',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop',
+    title: 'NexGear',
+    role: 'Fullstack Developer',
+    tech: 'CodeIgniter 4, MySQL, Bootstrap 5, PHP',
+    description: 'A premium e-commerce storefront for elite gaming hardware with a brutalist editorial design, secure admin dashboard, real-time inventory, 2FA authentication, and a streamlined checkout flow.',
+    link: 'https://github.com/ferdiansyahh04/nexgear-my-id',
+    image: 'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=800&auto=format&fit=crop',
   }
 ];
 
@@ -67,7 +67,7 @@ export default function ProjectReveal() {
       >
         <div>
           <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-white uppercase">Selected Works</h2>
-          <p className="text-[var(--accent)] font-mono mt-4">["SaaS_POS", "Booking_Systems", "Infrastructure"]</p>
+          <p className="text-[var(--accent)] font-mono mt-4">["SaaS_POS", "Booking_Systems", "E_Commerce"]</p>
         </div>
       </motion.div>
 
