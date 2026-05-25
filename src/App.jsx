@@ -12,6 +12,7 @@ import ExperienceTimeline from './components/ExperienceTimeline';
 import Certifications from './components/Certifications';
 import Preloader from './components/Preloader';
 import Stats from './components/Stats';
+import AIChat from './components/AIChat';
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -179,6 +180,9 @@ function App() {
         </footer>
       </div>
       )}
+
+      {/* AI Chatbot — DataByte AI integration */}
+      {!isLoading && <AIChat />}
     </>
   );
 }
