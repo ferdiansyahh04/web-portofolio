@@ -5,12 +5,12 @@ import { ArrowRight } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: 'WHMCS Automation',
-    role: 'System Architect & Dev',
-    tech: 'Node.js, WHMCS API, Linux',
-    description: 'Automating server provisioning and billing cycles using WHMCS API and custom Node.js hooks.',
-    link: 'https://github.com/ferdiansyahh04',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop',
+    title: 'Posiva',
+    role: 'Fullstack Developer',
+    tech: 'React, Express, Prisma, Vite UI, Docker',
+    description: 'A web-based inventory and point-of-sale (POS) management system for computer stores, accessory shops, mobile phone stores, and small-to-medium-sized convenience stores.',
+    link: 'https://posiva.my.id/login',
+    image: 'posiva-login.png',
   },
   {
     id: 2,
@@ -48,7 +48,7 @@ export default function ProjectReveal() {
   useEffect(() => {
     const handleMouseMove = (e) => {
       // Offset by half the image width/height to center it on cursor
-      mouseX.set(e.clientX - 200); 
+      mouseX.set(e.clientX - 200);
       mouseY.set(e.clientY - 150);
     };
 
@@ -58,7 +58,7 @@ export default function ProjectReveal() {
 
   return (
     <section id="projects" ref={containerRef} className="py-32 px-8 md:px-24 relative z-10 max-w-7xl mx-auto">
-      <motion.div 
+      <motion.div
         className="mb-24 flex justify-between items-end"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function ProjectReveal() {
       >
         <div>
           <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-white uppercase">Selected Works</h2>
-          <p className="text-[var(--accent)] font-mono mt-4">["WHMCS", "Booking_Systems", "Infrastructure"]</p>
+          <p className="text-[var(--accent)] font-mono mt-4">["SaaS_POS", "Booking_Systems", "Infrastructure"]</p>
         </div>
       </motion.div>
 
@@ -90,21 +90,21 @@ export default function ProjectReveal() {
               transition={{ duration: 0.6, delay: index * 0.15, ease: [0.25, 0.4, 0.25, 1] }}
             >
               <div className="flex flex-col z-10 relative pointer-events-none max-w-2xl">
-                <h3 className="text-5xl md:text-8xl font-black tracking-tighter uppercase transition-all duration-500 text-transparent bg-clip-text mb-4" 
-                    style={{
-                      WebkitTextStroke: '1px rgba(255,255,255,0.3)',
-                      color: activeProject === project.id ? 'var(--accent)' : 'transparent',
-                      WebkitTextStrokeColor: activeProject === project.id ? 'var(--accent)' : 'rgba(255,255,255,0.3)'
-                    }}>
+                <h3 className="text-5xl md:text-8xl font-black tracking-tighter uppercase transition-all duration-500 text-transparent bg-clip-text mb-4"
+                  style={{
+                    WebkitTextStroke: '1px rgba(255,255,255,0.3)',
+                    color: activeProject === project.id ? 'var(--accent)' : 'transparent',
+                    WebkitTextStrokeColor: activeProject === project.id ? 'var(--accent)' : 'rgba(255,255,255,0.3)'
+                  }}>
                   {project.title}
                 </h3>
                 <p className={`text-lg text-white/60 transition-all duration-500 ${activeProject === project.id ? 'opacity-100 translate-x-4' : 'opacity-0'}`}>
                   {project.description}
                 </p>
               </div>
-              
-              <div className="flex items-center gap-8 mt-6 md:mt-0 z-10 pointer-events-none transition-opacity duration-300" 
-                   style={{ opacity: activeProject === project.id ? 1 : 0.4 }}>
+
+              <div className="flex items-center gap-8 mt-6 md:mt-0 z-10 pointer-events-none transition-opacity duration-300"
+                style={{ opacity: activeProject === project.id ? 1 : 0.4 }}>
                 <div className="text-right">
                   <p className="text-xl font-bold text-white">{project.role}</p>
                   <p className="text-sm font-mono text-[var(--accent-alt)] mt-1">{project.tech}</p>
@@ -134,10 +134,9 @@ export default function ProjectReveal() {
             key={project.id}
             src={project.image}
             alt={project.title}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-              activeProject === project.id ? 'opacity-100' : 'opacity-0'
-            }`}
-            // Note: Update to 'object-contain' when using transparent PNGs
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${activeProject === project.id ? 'opacity-100' : 'opacity-0'
+              }`}
+          // Note: Update to 'object-contain' when using transparent PNGs
           />
         ))}
         {/* Glow behind image */}

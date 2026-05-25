@@ -48,8 +48,8 @@ const InteractiveTerminal = () => {
   const handleCommand = (e) => {
     if (e.key === 'Enter') {
       const cmd = input.trim().toLowerCase();
-      const newHistory = [...history, { type: 'input', content: `root@voltx:~# ${input}` }];
-      
+      const newHistory = [...history, { type: 'input', content: `root@rizky:~# ${input}` }];
+
       let output = '';
       switch (cmd) {
         case 'help':
@@ -88,7 +88,7 @@ const InteractiveTerminal = () => {
         <div className="w-2 h-2 rounded-full bg-green-500" />
         <span className="text-white/30 ml-2 text-[10px]">bash — interactive</span>
       </div>
-      
+
       <div ref={scrollRef} className="flex-1 overflow-y-auto custom-scrollbar pr-2">
         {history.map((line, i) => (
           <div key={i} className={`whitespace-pre-wrap mb-1 ${line.type === 'input' ? 'text-white' : 'text-[#00e5ff] opacity-80'}`}>
@@ -96,7 +96,7 @@ const InteractiveTerminal = () => {
           </div>
         ))}
         <div className="flex items-center gap-2 text-white">
-          <span className="shrink-0">root@voltx:~#</span>
+          <span className="shrink-0">root@rizky:~#</span>
           <input
             type="text"
             value={input}
@@ -123,7 +123,7 @@ const fadeUp = {
 export default function BentoGrid() {
   return (
     <section id="about" className="py-24 px-8 md:px-24 relative z-10 max-w-7xl mx-auto">
-      <motion.div 
+      <motion.div
         className="mb-16"
         initial="hidden"
         whileInView="visible"
@@ -135,9 +135,9 @@ export default function BentoGrid() {
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
-        
+
         {/* Box 1: Bio (Span 2 cols) */}
-        <motion.div 
+        <motion.div
           className="md:col-span-2 row-span-1 bg-black/40 backdrop-blur-md rounded-3xl border border-white/5 p-8 flex flex-col justify-center relative overflow-hidden group hover:border-[var(--accent)]/30 transition-colors"
           initial="hidden"
           whileInView="visible"
@@ -155,7 +155,7 @@ export default function BentoGrid() {
         </motion.div>
 
         {/* Box 4: Terminal (Span 1 col, 2 rows) */}
-        <motion.div 
+        <motion.div
           className="md:col-span-1 row-span-2 bg-[#050505] rounded-3xl border border-white/5 p-6 shadow-inner relative overflow-hidden group hover:border-[#00e5ff]/30 transition-colors"
           initial="hidden"
           whileInView="visible"
@@ -167,7 +167,7 @@ export default function BentoGrid() {
         </motion.div>
 
         {/* Box 3: Milestones (Span 1 col) */}
-        <motion.div 
+        <motion.div
           className="md:col-span-1 row-span-1 bg-black/40 backdrop-blur-md rounded-3xl border border-white/5 p-8 flex flex-col justify-between group hover:border-[var(--accent)]/30 transition-colors"
           initial="hidden"
           whileInView="visible"
@@ -183,7 +183,7 @@ export default function BentoGrid() {
         </motion.div>
 
         {/* Box 2: Tech Grid (Span 1 col) */}
-        <motion.div 
+        <motion.div
           className="md:col-span-1 row-span-1 bg-black/40 backdrop-blur-md rounded-3xl border border-white/5 p-8 overflow-hidden group hover:border-[var(--accent)]/30 transition-colors flex flex-col justify-between"
           initial="hidden"
           whileInView="visible"
