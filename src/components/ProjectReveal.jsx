@@ -19,7 +19,7 @@ const projects = [
     tech: 'Java Swing, MySQL, JDBC, NetBeans',
     description: 'A Java Swing desktop reservation system for futsal, basketball, and badminton courts. Features SHA-256 login, role-based access (Admin & Karyawan), automatic schedule-conflict validation, payment status tracking, and four reports for revenue, customers, and court usage.',
     link: 'https://github.com/ferdiansyahh04/booking-lapangan',
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop',
+    image: 'sportbooking.png',
   },
   {
     id: 3,
@@ -27,8 +27,8 @@ const projects = [
     role: 'Fullstack Developer',
     tech: 'CodeIgniter 4, MySQL, Bootstrap 5, PHP',
     description: 'A premium e-commerce storefront for elite gaming hardware with a brutalist editorial design, secure admin dashboard, real-time inventory, 2FA authentication, and a streamlined checkout flow.',
-    link: 'https://github.com/ferdiansyahh04/nexgear-my-id',
-    image: 'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=800&auto=format&fit=crop',
+    link: 'https://nexgear.my.id',
+    image: 'nexgear.png',
   }
 ];
 
