@@ -90,7 +90,7 @@ function App() {
           
           <div className="text-3xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight mb-6 md:mb-8 min-h-[4em] md:min-h-[3em] text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">
             <Typewriter 
-              texts={['System & Network Administrator', 'Software Engineering Enthusiast']} 
+              texts={['System & Network Administrator', 'Full-Stack Web Developer']} 
               delay={80} 
               pause={3000} 
             />

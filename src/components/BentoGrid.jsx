@@ -56,7 +56,7 @@ const InteractiveTerminal = () => {
           output = 'Available commands: help, about, skills, contact, clear, date';
           break;
         case 'about':
-          output = 'Rizky Ferdiansyah — System & Network Administrator turning Software Engineer. Specializing in high-availability infrastructure and interactive web apps.';
+          output = 'Rizky Ferdiansyah — System & Network Administrator turning Full-Stack Web Developer. Specializing in high-availability infrastructure and interactive web apps.';
           break;
         case 'skills':
           output = 'Linux [██████████] 95%\nNetworking [█████████░] 90%\nVirtualization [████████░░] 85%\nDatabases [███████░░░] 70%';
@@ -138,19 +138,19 @@ export default function BentoGrid() {
 
         {/* Box 1: Bio (Span 2 cols) */}
         <motion.div
-          className="md:col-span-2 row-span-1 bg-black/40 backdrop-blur-md rounded-3xl border border-white/5 p-8 flex flex-col justify-center relative overflow-hidden group hover:border-[var(--accent)]/30 transition-colors"
+          className="md:col-span-2 row-span-1 bg-black/40 backdrop-blur-md rounded-3xl border border-white/5 p-8 md:pr-44 flex flex-col justify-center relative overflow-hidden group hover:border-[var(--accent)]/30 transition-colors"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           custom={0}
           variants={fadeUp}
         >
-          <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-            <Server className="w-32 h-32" />
+          <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
+            <Server className="w-24 h-24 md:w-28 md:h-28" />
           </div>
           <h3 className="text-2xl font-bold mb-4 text-[var(--accent)]">About Me</h3>
           <p className="text-lg text-white/80 leading-relaxed max-w-xl relative z-10">
-            Berangkat dari dunia infrastruktur jaringan yang kompleks, saya menemukan hasrat baru di ranah <span className="text-white font-bold">Software Engineering</span>. Kini, saya menggabungkan disiplin keandalan server dengan kreativitas pengembangan web interaktif.
+            Berangkat dari dunia infrastruktur jaringan yang kompleks, saya menemukan hasrat baru di ranah <span className="text-white font-bold">Full-Stack Web Development</span>. Kini, saya menggabungkan disiplin keandalan server dengan kreativitas pengembangan web interaktif.
           </p>
         </motion.div>
 

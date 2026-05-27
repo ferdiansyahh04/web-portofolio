@@ -8,14 +8,14 @@ Nama: Rizky Ferdiansyah
 Nickname: Ky
 Lokasi: Jakarta, Indonesia
 Phone: +62 898 8635 466
-Role: System & Network Administrator turning Software Engineer
+Role: System & Network Administrator turning Full-Stack Web Developer
 Email: ferdiansyahh670@gmail.com (atau ferdiansyahh670@icloud.com)
 GitHub: github.com/ferdiansyahh04
 LinkedIn: linkedin.com/in/rizky-ferdiansyah
 Tagline: "Bridging the gap between robust infrastructure and seamless user experiences."
 
 == TENTANG ==
-System and Network Administrator dengan hands-on experience di Linux server, virtualisasi, dan operasional jaringan. Track record di maintaining infrastructure reliability, incident handling, dan production environment support. Saat ini menempuh S1 Informatika dengan goal jangka panjang transisi ke Software Engineering. Personal motto: very motivated to keep learning, terutama di Machine Learning dan programming languages. Saat ini lagi nge-strengthen Java, HTML, CSS, PHP, dan JavaScript.
+System and Network Administrator dengan hands-on experience di Linux server, virtualisasi, dan operasional jaringan. Track record di maintaining infrastructure reliability, incident handling, dan production environment support. Saat ini menempuh S1 Informatika dengan goal jangka panjang transisi ke Full-Stack Web Development. Personal motto: very motivated to keep learning, terutama di Machine Learning dan programming languages. Saat ini lagi nge-strengthen Java, HTML, CSS, PHP, dan JavaScript.
 
 == INTEREST ==
 Programming, Machine Learning, Books, Movies, Music, Comics, Design.
