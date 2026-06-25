@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send, Sparkles, Loader2 } from 'lucide-react';
+import { Send, Sparkles, Loader2 } from 'lucide-react';
 
 const SUGGESTIONS = [
   'Apa skill utama Rizky?',
@@ -106,7 +106,10 @@ export default function AIChat() {
               transition={{ duration: 0.2 }}
               className="absolute flex items-center justify-center"
             >
-              <X className="w-6 h-6" strokeWidth={2.5} />
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 6L6 18" />
+                <path d="M6 6l12 12" />
+              </svg>
             </motion.div>
           ) : (
             <motion.div
@@ -117,7 +120,9 @@ export default function AIChat() {
               transition={{ duration: 0.2 }}
               className="absolute flex items-center justify-center"
             >
-              <MessageSquare className="w-6 h-6" strokeWidth={2.5} />
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+              </svg>
             </motion.div>
           )}
         </AnimatePresence>
