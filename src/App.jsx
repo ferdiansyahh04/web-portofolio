@@ -101,7 +101,7 @@ function App() {
             Building robust infrastructure systems, automation solutions, and interactive web experiences.
           </p>
           
-          <div className="flex flex-wrap items-center relative z-20" style={{ gap: '8px' }}>
+          <div className="flex flex-wrap items-center relative z-20" style={{ gap: '4px' }}>
             <MagneticButton
               className="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#ccff00] to-[#00e5ff] text-[#0a0a0a] font-bold rounded-full hover:scale-105 transition-transform shadow-[0_0_20px_rgba(204,255,0,0.3)] flex items-center gap-2 text-sm md:text-base"
               onClick={() => scrollToSection('projects')}
