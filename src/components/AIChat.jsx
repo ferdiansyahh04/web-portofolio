@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Sparkles, Loader2 } from 'lucide-react';
+import { MessageSquare, X, Send, Sparkles, Loader2 } from 'lucide-react';
 
 const SUGGESTIONS = [
   'Apa skill utama Rizky?',
@@ -92,7 +92,7 @@ export default function AIChat() {
       {/* Floating Toggle Button */}
       <motion.button
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-8 right-8 z-[60] w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(204,255,0,0.4)] border border-[#ccff00]/40 bg-gradient-to-br from-[#ccff00] to-[#00e5ff] text-black hover:scale-110 transition-transform"
+        className="fixed bottom-8 right-8 z-[60] w-14 h-14 rounded-full shadow-[0_0_30px_rgba(204,255,0,0.4)] border border-[#ccff00]/40 bg-gradient-to-br from-[#ccff00] to-[#00e5ff] text-black hover:scale-110 transition-transform"
         whileTap={{ scale: 0.92 }}
         aria-label={open ? 'Close AI chat' : 'Open AI chat'}
       >
@@ -104,12 +104,9 @@ export default function AIChat() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="absolute flex items-center justify-center"
+              className="absolute inset-0 flex items-center justify-center"
             >
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 6L6 18" />
-                <path d="M6 6l12 12" />
-              </svg>
+              <X className="w-6 h-6" strokeWidth={2.5} />
             </motion.div>
           ) : (
             <motion.div
@@ -118,11 +115,9 @@ export default function AIChat() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="absolute flex items-center justify-center"
+              className="absolute inset-0 flex items-center justify-center"
             >
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-              </svg>
+              <MessageSquare className="w-6 h-6" strokeWidth={2.5} />
             </motion.div>
           )}
         </AnimatePresence>
