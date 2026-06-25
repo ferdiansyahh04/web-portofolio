@@ -104,9 +104,9 @@ export default function AIChat() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="absolute inset-0 flex items-center justify-center"
+              className="w-full h-full grid place-items-center"
             >
-              <X className="w-6 h-6" strokeWidth={2.5} />
+              <X className="w-6 h-6 stroke-[2.5]" />
             </motion.div>
           ) : (
             <motion.div
@@ -115,9 +115,9 @@ export default function AIChat() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="absolute inset-0 flex items-center justify-center"
+              className="w-full h-full grid place-items-center"
             >
-              <MessageSquare className="w-6 h-6" strokeWidth={2.5} />
+              <MessageSquare className="w-6 h-6 stroke-[2.5]" />
             </motion.div>
           )}
         </AnimatePresence>
