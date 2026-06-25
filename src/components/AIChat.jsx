@@ -98,27 +98,27 @@ export default function AIChat() {
       >
         <AnimatePresence mode="wait" initial={false}>
           {open ? (
-            <motion.span
+            <motion.div
               key="x"
               initial={{ rotate: -90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center justify-center"
+              className="absolute flex items-center justify-center"
             >
               <X className="w-6 h-6" strokeWidth={2.5} />
-            </motion.span>
+            </motion.div>
           ) : (
-            <motion.span
+            <motion.div
               key="msg"
               initial={{ rotate: 90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center justify-center"
+              className="absolute flex items-center justify-center"
             >
               <MessageSquare className="w-6 h-6" strokeWidth={2.5} />
-            </motion.span>
+            </motion.div>
           )}
         </AnimatePresence>
       </motion.button>
