@@ -43,13 +43,14 @@ function App() {
         >
           <TextPressure
             text="PORTFOLIO"
-            fontFamily="Inter"
-            enableVariableFont={false}
-            enableScale={true}
-            enableColorShift={true}
-            enableGlow={true}
-            glowColor="#ccff00"
+            flex={true}
+            alpha={false}
+            stroke={false}
+            width={true}
+            weight={true}
+            italic={true}
             textColor="#ccff00"
+            strokeColor="#ff0000"
             minFontSize={28}
           />
         </div>

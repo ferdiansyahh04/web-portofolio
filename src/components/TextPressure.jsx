@@ -22,17 +22,9 @@ const debounce = (func, delay) => {
 };
 
 const TextPressure = ({
-  text = 'Portfolio',
-  fontFamily = 'Inter',
-  fontUrl = '',
-
-  // Font variation settings (only work with variable fonts)
-  enableVariableFont = true,
-
-  // Fallback effects for standard fonts
-  enableScale = true,
-  enableColorShift = true,
-  enableGlow = true,
+  text = 'Hello!',
+  fontFamily = 'Roboto Flex',
+  fontUrl = 'https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap',
 
   width = true,
   weight = true,
@@ -45,7 +37,6 @@ const TextPressure = ({
 
   textColor = '#FFFFFF',
   strokeColor = '#FF0000',
-  glowColor = '#ccff00',
   className = '',
 
   minFontSize = 24
@@ -143,45 +134,18 @@ const TextPressure = ({
 
           const d = dist(mouseRef.current, charCenter);
 
-          // Variable font settings (only if enabled and supported)
-          if (enableVariableFont) {
-            const wdth = width ? Math.floor(getAttr(d, maxDist, 5, 200)) : 100;
-            const wght = weight ? Math.floor(getAttr(d, maxDist, 100, 900)) : 400;
-            const italVal = italic ? getAttr(d, maxDist, 0, 1).toFixed(2) : 0;
-            const alphaVal = alpha ? getAttr(d, maxDist, 0, 1).toFixed(2) : 1;
+          const wdth = width ? Math.floor(getAttr(d, maxDist, 5, 200)) : 100;
+          const wght = weight ? Math.floor(getAttr(d, maxDist, 100, 900)) : 400;
+          const italVal = italic ? getAttr(d, maxDist, 0, 1).toFixed(2) : 0;
+          const alphaVal = alpha ? getAttr(d, maxDist, 0, 1).toFixed(2) : 1;
 
-            const newFontVariationSettings = `'wght' ${wght}, 'wdth' ${wdth}, 'ital' ${italVal}`;
+          const newFontVariationSettings = `'wght' ${wght}, 'wdth' ${wdth}, 'ital' ${italVal}`;
 
-            if (span.style.fontVariationSettings !== newFontVariationSettings) {
-              span.style.fontVariationSettings = newFontVariationSettings;
-            }
-            if (alpha && span.style.opacity !== alphaVal) {
-              span.style.opacity = alphaVal;
-            }
+          if (span.style.fontVariationSettings !== newFontVariationSettings) {
+            span.style.fontVariationSettings = newFontVariationSettings;
           }
-
-          // Fallback effects for standard fonts
-          if (enableScale) {
-            const scaleVal = 1 + getAttr(d, maxDist, 0, 0.15);
-            const rotateVal = getAttr(d, maxDist, -8, 8);
-            if (span.style.transform !== `scale(${scaleVal}) rotate(${rotateVal}deg)`) {
-              span.style.transform = `scale(${scaleVal}) rotate(${rotateVal}deg)`;
-            }
-          }
-
-          if (enableColorShift) {
-            const alphaVal = 0.5 + getAttr(d, maxDist, 0, 0.5);
-            if (span.style.opacity !== String(alphaVal)) {
-              span.style.opacity = alphaVal;
-            }
-          }
-
-          if (enableGlow) {
-            const blurVal = getAttr(d, maxDist, 0, 15);
-            const spreadVal = getAttr(d, maxDist, 0, 0.8);
-            if (span.style.filter !== `drop-shadow(0 0 ${blurVal}px ${glowColor})`) {
-              span.style.filter = `drop-shadow(0 0 ${blurVal}px ${glowColor})`;
-            }
+          if (alpha && span.style.opacity !== alphaVal) {
+            span.style.opacity = alphaVal;
           }
         });
       }
@@ -191,18 +155,14 @@ const TextPressure = ({
 
     animate();
     return () => cancelAnimationFrame(rafId);
-  }, [width, weight, italic, alpha, enableVariableFont, enableScale, enableColorShift, enableGlow, glowColor]);
+  }, [width, weight, italic, alpha]);
 
   const styleElement = useMemo(() => {
     return (
       <style>{`
-        @font-face {
-          font-family: '${fontFamily}';
-          src: url('${fontUrl}');
-          font-style: normal;
-        }
+        @import url('${fontUrl}');
 
-        .text-pressure-flex {
+        .flex {
           display: flex;
           justify-content: space-between;
         }
@@ -225,17 +185,11 @@ const TextPressure = ({
         .text-pressure-title {
           color: ${textColor};
         }
-
-        .text-pressure-char {
-          display: inline-block;
-          transition: transform 0.1s ease-out;
-          will-change: transform, opacity, filter;
-        }
       `}</style>
     );
   }, [fontFamily, fontUrl, textColor, strokeColor]);
 
-  const dynamicClassName = [className, flex ? 'text-pressure-flex' : '', stroke ? 'stroke' : ''].filter(Boolean).join(' ');
+  const dynamicClassName = [className, flex ? 'flex' : '', stroke ? 'stroke' : ''].filter(Boolean).join(' ');
 
   return (
     <div
@@ -262,9 +216,8 @@ const TextPressure = ({
           textAlign: 'center',
           userSelect: 'none',
           whiteSpace: 'nowrap',
-          fontWeight: 700,
-          width: '100%',
-          letterSpacing: '0.05em'
+          fontWeight: 100,
+          width: '100%'
         }}
       >
         {chars.map((char, i) => (
@@ -272,8 +225,8 @@ const TextPressure = ({
             key={i}
             ref={el => (spansRef.current[i] = el)}
             data-char={char}
-            className="text-pressure-char"
             style={{
+              display: 'inline-block',
               color: stroke ? undefined : textColor
             }}
           >
