@@ -101,20 +101,20 @@ function App() {
             Building robust infrastructure systems, automation solutions, and interactive web experiences.
           </p>
           
-          <div className="flex flex-wrap relative z-20" style={{ gap: '8px 8px' }}>
-            <MagneticButton 
+          <div className="flex flex-wrap items-center relative z-20" style={{ gap: '8px' }}>
+            <MagneticButton
               className="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[#ccff00] to-[#00e5ff] text-[#0a0a0a] font-bold rounded-full hover:scale-105 transition-transform shadow-[0_0_20px_rgba(204,255,0,0.3)] flex items-center gap-2 text-sm md:text-base"
               onClick={() => scrollToSection('projects')}
             >
               View Projects <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
             </MagneticButton>
-            <MagneticButton 
+            <MagneticButton
               className="px-6 md:px-8 py-3 md:py-4 bg-transparent border border-white/20 font-bold rounded-full hover:bg-white/10 transition-colors text-white text-sm md:text-base"
               onClick={() => scrollToSection('contact')}
             >
               Contact
             </MagneticButton>
-            <MagneticButton 
+            <MagneticButton
               className="px-6 md:px-8 py-3 md:py-4 bg-white/5 border border-[#ccff00]/30 font-bold rounded-full hover:bg-[#ccff00]/10 transition-colors text-[#ccff00] flex items-center gap-2 text-sm md:text-base"
               onClick={() => {
                 const link = document.createElement('a');
