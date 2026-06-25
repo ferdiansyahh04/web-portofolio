@@ -22,9 +22,17 @@ const debounce = (func, delay) => {
 };
 
 const TextPressure = ({
-  text = 'Compressa',
-  fontFamily = 'Compressa VF',
-  fontUrl = 'https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2',
+  text = 'Portfolio',
+  fontFamily = 'Inter',
+  fontUrl = '',
+
+  // Font variation settings (only work with variable fonts)
+  enableVariableFont = true,
+
+  // Fallback effects for standard fonts
+  enableScale = true,
+  enableColorShift = true,
+  enableGlow = true,
 
   width = true,
   weight = true,
@@ -37,6 +45,7 @@ const TextPressure = ({
 
   textColor = '#FFFFFF',
   strokeColor = '#FF0000',
+  glowColor = '#ccff00',
   className = '',
 
   minFontSize = 24
@@ -134,18 +143,45 @@ const TextPressure = ({
 
           const d = dist(mouseRef.current, charCenter);
 
-          const wdth = width ? Math.floor(getAttr(d, maxDist, 5, 200)) : 100;
-          const wght = weight ? Math.floor(getAttr(d, maxDist, 100, 900)) : 400;
-          const italVal = italic ? getAttr(d, maxDist, 0, 1).toFixed(2) : 0;
-          const alphaVal = alpha ? getAttr(d, maxDist, 0, 1).toFixed(2) : 1;
+          // Variable font settings (only if enabled and supported)
+          if (enableVariableFont) {
+            const wdth = width ? Math.floor(getAttr(d, maxDist, 5, 200)) : 100;
+            const wght = weight ? Math.floor(getAttr(d, maxDist, 100, 900)) : 400;
+            const italVal = italic ? getAttr(d, maxDist, 0, 1).toFixed(2) : 0;
+            const alphaVal = alpha ? getAttr(d, maxDist, 0, 1).toFixed(2) : 1;
 
-          const newFontVariationSettings = `'wght' ${wght}, 'wdth' ${wdth}, 'ital' ${italVal}`;
+            const newFontVariationSettings = `'wght' ${wght}, 'wdth' ${wdth}, 'ital' ${italVal}`;
 
-          if (span.style.fontVariationSettings !== newFontVariationSettings) {
-            span.style.fontVariationSettings = newFontVariationSettings;
+            if (span.style.fontVariationSettings !== newFontVariationSettings) {
+              span.style.fontVariationSettings = newFontVariationSettings;
+            }
+            if (alpha && span.style.opacity !== alphaVal) {
+              span.style.opacity = alphaVal;
+            }
           }
-          if (alpha && span.style.opacity !== alphaVal) {
-            span.style.opacity = alphaVal;
+
+          // Fallback effects for standard fonts
+          if (enableScale) {
+            const scaleVal = 1 + getAttr(d, maxDist, 0, 0.15);
+            const rotateVal = getAttr(d, maxDist, -8, 8);
+            if (span.style.transform !== `scale(${scaleVal}) rotate(${rotateVal}deg)`) {
+              span.style.transform = `scale(${scaleVal}) rotate(${rotateVal}deg)`;
+            }
+          }
+
+          if (enableColorShift) {
+            const alphaVal = 0.5 + getAttr(d, maxDist, 0, 0.5);
+            if (span.style.opacity !== String(alphaVal)) {
+              span.style.opacity = alphaVal;
+            }
+          }
+
+          if (enableGlow) {
+            const blurVal = getAttr(d, maxDist, 0, 15);
+            const spreadVal = getAttr(d, maxDist, 0, 0.8);
+            if (span.style.filter !== `drop-shadow(0 0 ${blurVal}px ${glowColor})`) {
+              span.style.filter = `drop-shadow(0 0 ${blurVal}px ${glowColor})`;
+            }
           }
         });
       }
@@ -155,7 +191,7 @@ const TextPressure = ({
 
     animate();
     return () => cancelAnimationFrame(rafId);
-  }, [width, weight, italic, alpha]);
+  }, [width, weight, italic, alpha, enableVariableFont, enableScale, enableColorShift, enableGlow, glowColor]);
 
   const styleElement = useMemo(() => {
     return (
@@ -189,6 +225,12 @@ const TextPressure = ({
         .text-pressure-title {
           color: ${textColor};
         }
+
+        .text-pressure-char {
+          display: inline-block;
+          transition: transform 0.1s ease-out;
+          will-change: transform, opacity, filter;
+        }
       `}</style>
     );
   }, [fontFamily, fontUrl, textColor, strokeColor]);
@@ -220,8 +262,9 @@ const TextPressure = ({
           textAlign: 'center',
           userSelect: 'none',
           whiteSpace: 'nowrap',
-          fontWeight: 100,
-          width: '100%'
+          fontWeight: 700,
+          width: '100%',
+          letterSpacing: '0.05em'
         }}
       >
         {chars.map((char, i) => (
@@ -229,8 +272,8 @@ const TextPressure = ({
             key={i}
             ref={el => (spansRef.current[i] = el)}
             data-char={char}
+            className="text-pressure-char"
             style={{
-              display: 'inline-block',
               color: stroke ? undefined : textColor
             }}
           >

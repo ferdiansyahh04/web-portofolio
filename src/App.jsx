@@ -37,20 +37,20 @@ function App() {
 
       {/* Navigation */}
       <nav className="fixed w-full top-0 z-50 p-4 md:p-6 flex justify-between items-center backdrop-blur-md bg-black/20 border-b border-white/5">
-        <div 
-          className="relative w-32 md:w-48 h-8 md:h-12 pointer-events-auto cursor-pointer"
+        <div
+          className="relative w-48 md:w-64 h-14 md:h-20 pointer-events-auto cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <TextPressure
             text="PORTFOLIO"
-            flex={true}
-            alpha={false}
-            stroke={false}
-            width={true}
-            weight={true}
-            italic={true}
+            fontFamily="Inter"
+            enableVariableFont={false}
+            enableScale={true}
+            enableColorShift={true}
+            enableGlow={true}
+            glowColor="#ccff00"
             textColor="#ccff00"
-            minFontSize={18}
+            minFontSize={28}
           />
         </div>
         <ul className="flex gap-4 md:gap-8 text-[10px] md:text-sm font-medium opacity-70">
