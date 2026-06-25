@@ -92,7 +92,7 @@ export default function AIChat() {
       {/* Floating Toggle Button */}
       <motion.button
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(204,255,0,0.4)] border border-[#ccff00]/40 bg-gradient-to-br from-[#ccff00] to-[#00e5ff] text-black hover:scale-110 transition-transform"
+        className="fixed bottom-8 right-8 z-[60] w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(204,255,0,0.4)] border border-[#ccff00]/40 bg-gradient-to-br from-[#ccff00] to-[#00e5ff] text-black hover:scale-110 transition-transform"
         whileTap={{ scale: 0.92 }}
         aria-label={open ? 'Close AI chat' : 'Open AI chat'}
       >
@@ -104,6 +104,7 @@ export default function AIChat() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
+              className="flex items-center justify-center"
             >
               <X className="w-6 h-6" strokeWidth={2.5} />
             </motion.span>
@@ -114,6 +115,7 @@ export default function AIChat() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
+              className="flex items-center justify-center"
             >
               <MessageSquare className="w-6 h-6" strokeWidth={2.5} />
             </motion.span>
